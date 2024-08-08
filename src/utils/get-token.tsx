@@ -1,6 +1,9 @@
 "use client";
 
 const getToken = () => {
+  if (typeof document === "undefined") {
+    return null;
+  }
   const getTokenFromCookies = () => {
     const name = "token=";
     const decodedCookie = decodeURIComponent(document.cookie);
